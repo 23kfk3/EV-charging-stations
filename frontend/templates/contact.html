@@ -1,0 +1,51 @@
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Page With Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+   <link rel="stylesheet" href="static/contact/contact.css">
+   
+
+</head>
+<body>
+  <div class="contact-from">
+      <div class="form-area">
+          <div class="animated fadeInDown">
+              <h2>Contact Us</h2>
+              <p>Send us a mail regarding your grievance and we'll get back to you!</p>
+          </div>
+          
+          <div class="contact">
+              <div class="map animated fadeInLeft">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d58365.19068196581!2d89.1033283!3d23.8958441!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fe965536b7d61f%3A0x28fea367efdb38c9!2sKushtia!5e0!3m2!1sen!2sbd!4v1588845495032!5m2!1sen!2sbd" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+              </div>
+
+              <form class="form animated fadeInUp">
+                  <label>
+                      <input type="email" class="email" id="email" required>
+                      <div class="label email-text">E-mail</div>
+                  </label>
+
+                  <label>
+                      <input type="text" class="subject" id="subject" required>
+                      <div class="label subject-text">Subject</div>
+                  </label>
+
+                  <label>
+                      <textarea class="help-box" id="helpBox" cols="30" rows="10" required></textarea>
+                      <div class="label help-text">How we can help?</div>
+                  </label>
+
+                  <div class="submit-area">
+                      <input type="submit" id="submit" value="Submit">
+                      <i class="far fa-paper-plane"></i>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+  <script src="static/contact/contact.js"></script>
+</body>
+</html>

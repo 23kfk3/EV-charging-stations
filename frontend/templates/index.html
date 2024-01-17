@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- metas -->
+    <meta charset="utf-8">
+    <!-- <meta name="author" content="Chitrakoot Web"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="Electric Vehicle Charging Station">
+    <meta name="description" content="Chargey - Electric Vehicle Charging Station">
+
+    <!-- title  -->
+    <title>Electric Vehicle Charging Station</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="static/img/logos/favicon.png">
+    <link rel="apple-touch-icon" href="static/img/logos/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/img/logos/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/img/logos/apple-touch-icon-114x114.png">
+
+    <!-- plugins -->
+    <link rel="stylesheet" href="static/css/plugins.css">
+
+    <!-- search css -->
+    <link rel="stylesheet" href="static/search/search.css">
+
+    <!-- quform css -->
+    <link rel="stylesheet" href="static/quform/css/base.css">
+
+    <!-- theme core css -->
+    <link href="static/css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/shinde.css">
+    <script>
+        const requestOptions = {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+        }
+        fetch('/api/is-logged-in', requestOptions).then(response => response.json()).then(data => {
+            if (!data.result)
+                window.location.replace('/login')
+        })
+        function logout() {
+            const requestOptions = {
+                'method': 'POST'
+            }
+            fetch('/api/logout', requestOptions).then(response => response.json()).then(data => {
+                window.location.reload()
+                alert(data.message)
+            })
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <!-- PAGE LOADING
+    ================================================== -->
+    <div id="preloader"></div>
+
+    <!-- MAIN WRAPPER
+    ================================================== -->
+    <div class="main-wrapper">
+
+        <!-- HEADER
+        ================================================== -->
+        <header class="header-style1 menu_area-light">
+
+            <div class="navbar-default border-bottom border-color-light-white">
+
+                <!-- start top search -->
+                <div class="top-search bg-primary">
+                    <div class="container-fluid px-lg-1-6 px-xl-2-5 px-xxl-2-9">
+                        <form class="search-form" action="search" method="GET" accept-charset="utf-8">
+                            <div class="input-group">
+                                <span class="input-group-addon cursor-pointer">
+                                    <button class="search-form_submit fas fa-search text-white" type="submit"></button>
+                                </span>
+                                <input type="text" class="search-form_input form-control" name="s" autocomplete="off"
+                                    placeholder="Type &amp; hit enter...">
+                                <span class="input-group-addon close-search mt-1"><i class="fas fa-times"></i></span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- end top search -->
+
+                <div class="container-fluid px-lg-1-6 px-xl-2-5 px-xxl-2-9">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-lg-12">
+                            <div class="menu_area alt-font">
+                                <nav class="navbar navbar-expand-lg navbar-light p-0">
+                                    <div class="navbar-header navbar-header-custom">
+                                        <!-- start logo -->
+                                        <!--
+                                            @shinde 
+                                            <a href="index.html" class="navbar-brand"><img id="logo" src="static/img/logos/logo-inner.png" alt="logo"></a>-->
+                                        <!-- end logo -->
+                                    </div>
+
+                                    <div class="navbar-toggler"></div>
+
+                                    <!-- start menu area -->
+                                    <ul class="navbar-nav ms-auto" id="nav" style="display: none;">
+                                        <li><a href="/">Home</a></li>
+                                        <li>
+                                            <a href="#!">Pages</a>
+                                            <ul>
+                                                <li><a href="about.html">About Us</a></li>
+                                                <li><a href="our-history.html">Our History</a></li>
+                                                <li><a href="faq.html">FAQ's</a></li>
+                                                <li>
+                                                    <a href="#!">Our Team</a>
+                                                    <ul>
+                                                        <li><a href="team.html">Our Team</a></li>
+                                                        <li><a href="team-details.html">Team Details</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="pricing.html">Pricing Plans</a></li>
+                                                <li><a href="testimonials.html">Testimonials</a></li>
+                                                <li><a href="404-page.html">404 Page</a></li>
+                                                <li><a href="coming-soon.html">Coming Soon</a></li>
+                                                <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                                                <li><a href="terms-conditions.html">Terms &amp; Conditions</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#!">Service</a>
+                                            <ul>
+                                                <li><a href="service">Our Services</a></li>
+                                                <li><a href="navigation">Navigation Stations</a></li>
+                                                <li><a href="solar-clean-energy.html">Solar &amp; Clean Energy</a></li>
+                                                <li><a href="station/station.html"> Power station</a></li>
+                                                <li><a href="charge-point-stations.html">Charge Point Stations</a></li>
+                                                <li><a href="home-charging.html">Home Charging</a></li>
+                                                <li><a href="dc-charger-service.html">DC Charger Service</a></li>
+                                                <li><a href="corporate-business.html">Corporate Business</a></li>
+                                                <li><a href="hybrid-car-watches.html">Hybrid Car Watches</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#!">Portfolio</a>
+                                            <ul>
+                                                <li><a href="portfolio.html">Portfolio</a></li>
+                                                <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#!">Blog</a>
+                                            <ul>
+                                                <li><a href="blog-grid.html">Blog Grid</a></li>
+                                                <li><a href="blog-list.html">Blog List</a></li>
+                                                <li><a href="blog-details.html">Blog Details</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li><a href="contact">Contact</a></li>
+                                        <li><a style="cursor: pointer;" onclick="logout()">Logout</a></li>
+                                    </ul>
+                                    <!-- end menu area -->
+
+                                    <!-- start attribute navigation -->
+                                    <div class="attr-nav align-items-xl-center ms-xl-auto main-font">
+                                        <ul>
+                                            <li class="search"><a href="#!"><i class="fas fa-search"></i></a></li>
+                                            <li class="d-none d-xl-inline-block"><a href="contact"
+                                                    class="btn-style1 medium primary">Free Quote</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- end attribute navigation -->
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- BANNER
+        ================================================== -->
+        <section class="full-screen top-position1 p-0 banner-03">
+            <div class="slider-fade2 owl-carousel owl-theme w-100 min-vh-100">
+
+                <div class="item bg-img cover-background" data-overlay-dark="55"
+                    data-background="static/img/banner-01.jpg">
+                    <div class="container pt-sm-6 pt-md-0 d-flex flex-column">
+                        <div class="row align-items-center justify-content-end text-end min-vh-100 pt-6 pt-md-0">
+                            <div class="col-lg-10 mb-1-9 mb-lg-0 py-5">
+                                <div class="title-style1 text-primary h4">
+                                    <span>For Every Electric Vehicle!</span>
+                                </div>
+                                <h1
+                                    class="display-18 display-sm-13 display-md-10 display-lg-5 display-xl-4 display-xxl-2 mb-1-6 text-white">
+                                    For Large &amp; Small Charging Stations</h1>
+                                <a href="about.html" class="btn-style1 primary"><span>Learn More</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item bg-img cover-background" data-overlay-dark="55"
+                    data-background="static/img/banner-02.jpg">
+                    <div class="container pt-sm-6 pt-md-0 d-flex flex-column">
+                        <div class="row align-items-center justify-content-end text-end min-vh-100 pt-6 pt-md-0">
+                            <div class="col-lg-10 mb-1-9 mb-lg-0 py-5">
+                                <div class="title-style1 text-primary h4">
+                                    <span>For Every Electric Vehicle!</span>
+                                </div>
+                                <h1
+                                    class="display-18 display-sm-13 display-md-10 display-lg-5 display-xl-4 display-xxl-2 mb-1-6 text-white">
+                                    Solutions For Smart Electric Car Charging!</h1>
+                                <a href="about.html" class="btn-style1 primary"><span>Learn More</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item bg-img cover-background" data-overlay-dark="55"
+                    data-background="static/img/banner-03.jpg">
+                    <div class="container pt-sm-6 pt-md-0 d-flex flex-column">
+                        <div class="row align-items-center justify-content-end text-end min-vh-100 pt-6 pt-md-0">
+                            <div class="col-lg-10 mb-1-9 mb-lg-0 py-5">
+                                <div class="title-style1 text-primary h4">
+                                    <span>For Every Electric Vehicle!</span>
+                                </div>
+                                <h1
+                                    class="display-18 display-sm-13 display-md-10 display-lg-5 display-xl-4 display-xxl-2 mb-1-6 text-white">
+                                    Paving The Way For EV Adoption.</h1>
+                                <a href="about.html" class="btn-style1 primary"><span>Learn More</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FEATURES
+        ================================================== -->
+        <section>
+            <div class="container">
+                <div class="row mt-n1-6">
+                    <div class="col-sm-6 col-lg-3 mt-1-6">
+                        <div class="card card-style01 border-radius-10 h-100">
+                            <div class="card-body d-flex align-items-center py-md-3 px-md-1-6 px-xxl-1-9">
+                                <div class="flex-shrink-0">
+                                    <div class="icon">="#!"
+                                        <img src="static/img/icons/icon-01.png" alt="...">
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ps-3">
+                                    <span>Free Support</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 mt-1-6">
+                        <div class="card card-style01 border-radius-10 h-100">
+                            <div class="card-body d-flex align-items-center py-md-3 px-md-1-6 px-xxl-1-9">
+                                <div class="flex-shrink-0">
+                                    <div class="icon">
+                                        <img src="static/img/icons/icon-02.png" alt="...">
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ps-3">
+                                    <span>No Driving License</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 mt-1-6">
+                        <div class="card card-style01 border-radius-10 h-100">
+                            <div class="card-body d-flex align-items-center py-md-3 px-md-1-6 px-xxl-1-9">
+                                <div class="flex-shrink-0">
+                                    <div class="icon">
+                                        <img src="static/img/icons/icon-03.png" alt="...">
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ps-3">
+                                    <span>Quick installation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 mt-1-6">
+                        <div class="card card-style01 border-radius-10 h-100">
+                            <div class="card-body d-flex align-items-center py-md-3 px-md-1-6 px-xxl-1-9">
+                                <div class="flex-shrink-0">
+                                    <div class="icon">
+                                        <img src="static/img/icons/icon-04.png" alt="...">
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ps-3">
+                                    <span>High quality</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT
+        ================================================== -->
+        <section class="aboutus pt-0">
+            <div class="container">
+                <div class="row align-items-center mt-n2-6">
+                    <div class="col-lg-6 mt-2-6">
+                        <div class="position-relative text-center">
+                            <img src="static/img/content/about-01.jpg" alt="..." class="border-radius-10">
+                            <div class="img-2">
+                                <img src="static/img/content/about-02.jpg" alt="..." class="shadow ani-top-bottom">
+                            </div>
+                            <div class="exp-box ani-left-right">
+                                <h4 class="mb-0 display-12 text-primary">35+</h4>
+                                <span class="text-start ps-3">Years Of Experience</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-2-6">
+                        <div class="about-right ps-lg-2-9 ps-xxl-7">
+                            <div class="section-title mb-1-9">
+                                <span>About Chargey</span>
+                                <h2>Professional Electric Vehicle Charging Solution For You</h2>
+                            </div>
+                            <div class="d-flex mb-1">
+                                <div class="lg-text">C</div>
+                                <p class="mb-0">Every single electric vehicle, also referred to as battery electric
+                                    vehicles (BEVs), have an electric engine rather than a gas powered motor.</p>
+                            </div>
+                            <p>Electric vehicles function by connecting to a charge point and taking power from the
+                                grid.</p>
+                            <p class="text-primary font-weight-800 fst-italic mb-1-6 mb-sm-5">Electric vehicles speed up
+                                quicker than vehicles with conventional fuel motors - so they feel lighter to drive.</p>
+                            <div class="d-sm-flex">
+                                <div class="mb-1-6 mb-sm-0">
+                                    <a href="about.html" class="btn-style1">Read More</a>
+                                </div>
+                                <div class="d-flex ms-sm-1-6 ms-xl-2-9">
+                                    <div>
+                                        <i class="ti-headphone-alt display-10 text-primary"></i>
+                                    </div>
+                                    <div class="ps-3">
+                                        <span class="font-weight-900 text-dark">Any Quary ?</span>
+                                        <h6 class="mb-0">(+44) 123 456 789</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES
+        ================================================== -->
+        <section class="bg-dark">
+            <div class="container">
+                <div class="row align-items-center mb-5 mt-n1-9">
+                    <div class="col-lg-6 mt-1-9">
+                        <div class="section-title text-center text-lg-start">
+                            <span>Our Services</span>
+                            <h2 class="text-white">Best Charging Services For Your EV</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-1-9">
+                        <div class="text-center text-lg-end">
+                            <p class="mb-0 text-white">Every single electric vehicle, also referred to as battery
+                                electric vehicles (BEVs), have an electric engine rather than a gas powered motor.
+                                Electric vehicles function by connecting to a charge point and taking power from the
+                                grid.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-5">
+                    <div class="col-md-6 col-xl-3">
+                        <div class="card card-style02 border-0 bg-transparent">
+                            <img src="static/img/content/service-01.jpg" alt="..." class="border-radius-10">
+                            <div class="card-body px-0 position-relative">
+                                <h3 class="text-primary h6">Public Stations</h3>
+                                <p class="text-white mb-0">We focus on the best practices for all solutions and
+                                    services.</p>
+                                <div class="plus-icon">
+                                    <a href="public-stations.html"><i class="ti-plus"></i></a>
+                                </div>
+                                <div class="btn-text">
+                                    <a href="public-stations.html">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3">
+                        <div class="card card-style02 border-0 bg-transparent">
+                            <img src="static/img/content/service-02.jpg" alt="..." class="border-radius-10">
+                            <div class="card-body px-0 position-relative">
+                                <h3 class="text-primary h6">Solar &amp; Clean Energy</h3>
+                                <p class="text-white mb-0">We focus on the best practices for all solutions and
+                                    services.</p>
+                                <div class="plus-icon">
+                                    <a href="solar-clean-energy.html"><i class="ti-plus"></i></a>
+                                </div>
+                                <div class="btn-text">
+                                    <a href="solar-clean-energy.html">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3">
+                        <div class="card card-style02 border-0 bg-transparent">
+                            <img src="static/img/content/service-03.jpg" alt="..." class="border-radius-10">
+                            <div class="card-body px-0 position-relative">
+                                <h3 class="text-primary h6">Commercial Systems</h3>
+                                <p class="text-white mb-0">We focus on the best practices for all solutions and
+                                    services.</p>
+                                <div class="plus-icon">
+                                    <a href="commercial-systems.html"><i class="ti-plus"></i></a>
+                                </div>
+                                <div class="btn-text">
+                                    <a href="commercial-systems.html">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xl-3">
+                        <div class="card card-style02 border-0 bg-transparent">
+                            <img src="static/img/content/service-04.jpg" alt="..." class="border-radius-10">
+                            <div class="card-body px-0 position-relative">
+                                <h3 class="text-primary h6">Charge Point Stations</h3>
+                                <p class="text-white mb-0">We focus on the best practices for all solutions and
+                                    services.</p>
+                                <div class="plus-icon">
+                                    <a href="charge-point-stations.html"><i class="ti-plus"></i></a>
+                                </div>
+                                <div class="btn-text">
+                                    <a href="charge-point-stations.html">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COUNTER
+        ================================================== -->
+        <section class="py-0">
+            <div class="container">
+                <div class="bg-img cover-background py-10 py-xl-15" data-background="static/img/content/map-bg.jpg">
+                    <div class="row align-items-center mt-n1-6">
+                        <div class="col-lg-3 mt-1-6">
+                            <div class="row">
+                                <div class="col-6 col-lg-12">
+                                    <div class="text-center mb-lg-10">
+                                        <h3 class="display-18 display-md-15 display-lg-10"><span
+                                                class="countup">395</span>+</h3>
+                                        <span class="fw-bold text-uppercase display-31 display-sm-29">Electric
+                                            Vehicles</span>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-12">
+                                    <div class="text-center">
+                                        <h3 class="display-18 display-md-15 display-lg-10"><span
+                                                class="countup">1872</span>+</h3>
+                                        <span class="fw-bold text-uppercase display-31 display-sm-29">Happy
+                                            Clients</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mt-1-6">
+                            <div class="text-center">
+                                <img src="static/img/content/counter-img.png" alt="...">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 mt-1-6">
+                            <div class="row">
+                                <div class="col-6 col-lg-12">
+                                    <div class="text-center mb-lg-10">
+                                        <h3 class="display-18 display-md-15 display-lg-10"><span
+                                                class="countup">850</span>m</h3>
+                                        <span class="fw-bold text-uppercase display-31 display-sm-29">Green kms
+                                            driven</span>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-lg-12">
+                                    <div class="text-center">
+                                        <h3 class="display-18 display-md-15 display-lg-10"><span
+                                                class="countup">662</span>+</h3>
+                                        <span class="fw-bold text-uppercase display-31 display-sm-29">Service
+                                            Stations</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY CHOOSE US
+        ================================================== -->
+        <section class="pt-0">
+            <div class="mb-2-9">
+                <div class="container">
+                    <div class="row align-items-center mt-n2-6">
+                        <div class="col-lg-6 mt-2-6">
+                            <div>
+                                <div class="section-title mb-4">
+                                    <span>Why Choose US</span>
+                                    <h2>Take Care of Your Car &amp; Our Planet</h2>
+                                </div>
+                                <p class="w-lg-85 mb-4">Every single electric vehicle, also referred to as battery
+                                    electric vehicles (BEVs), have an electric engine rather than a gas powered motor.
+                                    Electric vehicles function by connecting to a charge point and taking power from the
+                                    grid.</p>
+                                <div class="progress-style1 w-md-80">
+                                    <div class="progress-text">
+                                        <div class="row">
+                                            <div class="col-6 fw-bold mb-2">EV Drivers Services</div>
+                                            <div class="col-6 text-end">70%</div>
+                                        </div>
+                                    </div>
+                                    <div class="custom-progress progress rounded-3">
+                                        <div class="animated custom-bar progress-bar slideInLeft bg-primary"
+                                            style="width:70%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="10"
+                                            role="progressbar"></div>
+                                    </div>
+                                    <div class="progress-text">
+                                        <div class="row">
+                                            <div class="col-6 fw-bold mb-2">Point Services</div>
+                                            <div class="col-6 text-end">90%</div>
+                                        </div>
+                                    </div>
+                                    <div class="custom-progress progress rounded-3">
+                                        <div class="animated custom-bar progress-bar slideInLeft bg-primary"
+                                            style="width:90%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="10"
+                                            role="progressbar"></div>
+                                    </div>
+                                    <div class="progress-text">
+                                        <div class="row">
+                                            <div class="col-6 fw-bold mb-2">Quality Service</div>
+                                            <div class="col-6 text-end">98%</div>
+                                        </div>
+                                    </div>
+                                    <div class="custom-progress progress rounded-3">
+                                        <div class="animated custom-bar progress-bar slideInLeft bg-primary"
+                                            style="width:98%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="10"
+                                            role="progressbar"></div>
+                                    </div>
+                                    <div class="progress-text">
+                                        <div class="row">
+                                            <div class="col-6 fw-bold mb-2">DC Charger Services</div>
+                                            <div class="col-6 text-end">65%</div>
+                                        </div>
+                                    </div>
+                                    <div class="custom-progress progress rounded-3">
+                                        <div class="animated custom-bar progress-bar slideInLeft bg-primary"
+                                            style="width:65%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="10"
+                                            role="progressbar"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mt-2-6">
+                            <div class="bg-dark p-1-9 p-md-5 border-radius-10">
+                                <form action="https://formspree.io/f/xgejggpl" method="POST">
+                                    <div class="quform-elements">
+                                        <div class="row">
+
+                                            <!-- Begin Text input element -->
+                                            <div class="col-md-6">
+                                                <div class="quform-element form-group">
+                                                    <label for="name">Your Name <span
+                                                            class="quform-required">*</span></label>
+                                                    <div class="quform-input">
+                                                        <input class="form-control" id="name" type="text" name="name"
+                                                            placeholder="Your name here" autocomplete="off">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End Text input element -->
+
+                                            <!-- Begin Text input element -->
+                                            <div class="col-md-6">
+                                                <div class="quform-element form-group">
+                                                    <label for="email">Your Email <span
+                                                            class="quform-required">*</span></label>
+                                                    <div class="quform-input">
+                                                        <input class="form-control" id="email" type="text" name="email"
+                                                            placeholder="Your email here" autocomplete="off">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End Text input element -->
+
+                                            <!-- Begin Text input element -->
+                                            <div class="col-md-6">
+                                                <div class="quform-element form-group">
+                                                    <label for="subject">Your Subject <span
+                                                            class="quform-required">*</span></label>
+                                                    <div class="quform-input">
+                                                        <input class="form-control" id="subject" type="text"
+                                                            name="subject" placeholder="Your subject here"
+                                                            autocomplete="off">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End Text input element -->
+
+                                            <!-- Begin Text input element -->
+                                            <div class="col-md-6">
+                                                <div class="quform-element form-group">
+                                                    <label for="phone">Contact Number</label>
+                                                    <div class="quform-input">
+                                                        <input class="form-control" id="phone" type="text" name="phone"
+                                                            placeholder="Your phone here" autocomplete="off">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End Text input element -->
+
+                                            <!-- Begin Textarea element -->
+                                            <div class="col-md-12">
+                                                <div class="quform-element form-group">
+                                                    <label for="message">Message <span
+                                                            class="quform-required">*</span></label>
+                                                    <div class="quform-input">
+                                                        <textarea class="form-control" id="message" name="message"
+                                                            rows="3" placeholder="Tell us a few words"
+                                                            autocomplete="off"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End Textarea element -->
+
+                                            <!-- Begin Captcha element -->
+                                            <div class="col-md-12">
+                                                <div class="quform-element">
+                                                    <div class="form-group">
+                                                        <div class="quform-input">
+                                                            <input class="form-control" id="type_the_word" type="text"
+                                                                name="type_the_word" placeholder="Type the below word"
+                                                                autocomplete="off">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="quform-captcha">
+                                                            <div class="quform-captcha-inner">
+                                                                <img src="static/quform/images/captcha/courier-new-light.png"
+                                                                    alt="...">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- End Captcha element -->
+
+                                            <!-- Begin Submit button -->
+                                            <div class="col-md-12">
+                                                <div class="quform-submit-inner">
+                                                    <button class="btn-style1 primary border-0" type="submit"><span>Send
+                                                            Message</span></button>
+                                                </div>
+                                                <div class="quform-loading-wrap text-start"><span
+                                                        class="quform-loading"></span></div>
+                                            </div>
+                                            <!-- End Submit button -->
+
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-light testimonial-one border-radius-10">
+                <div class="container">
+                    <div class="section-title text-center mb-1-6 mb-md-5">
+                        <span>Testimonials</span>
+                        <h2>Our Clients Says</h2>
+                    </div>
+                    <div class="row">
+                        <div class="testimonial-carousel3 owl-carousel owl-theme">
+                            <div class="shadow p-1-6 p-sm-1-9 mx-4 my-4 border-radius-10">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div>
+                                        <img src="static/img/avatars/avatar-01.jpg" class="rounded-circle" alt="...">
+                                    </div>
+                                    <div class="ps-3">
+                                        <h4 class="h5 mb-0 text-primary">Eleleta Girma</h4>
+                                        <p class="mb-0">Customer</p>
+                                    </div>
+                                </div>
+                                <p class="mb-4 border-bottom pb-4">Charging station is the next killer app. I would be
+                                    lost without charging station. I will refer everyone i know.</p>
+                                <ul class="list-unstyled mb-0">
+                                    <li class="d-inline-block"><i class="fa-solid fa-star text-block-opacity"></i></li>
+                                    <li class="d-inline-block"><i class="fa-solid fa-star text-block-opacity"></i></li>
+                                    <li class="d-inline-block"><i class="fa-solid fa-star text-block-opacity"></i></li>
+                                    <li class="d-inline-block"><i class="fa-solid fa-star text-block-opacity"></i></li>
+                                    <li class="d-inline-block"><i class="fa-solid fa-star text-block-opacity"></i></li>
+                                </ul>
+                            </div>
+                            <div class="shadow p-1-6 p-sm-1-9 mx-4 my-4 border-radius-10">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div>
+                                        <img src="static/img/avatars/avatar-02.jpg" class="rounded-circle" alt="...">
+                                    </div>
+                                    <div class="ps-3">
+                                        <h4 class="h5 mb-0 text-primary">Efrem Yonas</h4>
+                                        <p class="mb-0">Customer</p>
+                                    </div>
+                                </div>
+                                <p class="mb-4 border-bottom pb-4">I am completely blown away. We've used charging
+                                    station for the last five years. I'm good to go.</p>
+                                <ul class="list-unstyled mb-0">
+                                    <li class="d-inline-block"><i class="fa-solid fa-star text-block-opacity"></i></li>
+                                    <li class="d-inline-block"><i class="fa-solid fa-star text-block-opacity"></i></li>
+                                    <li class="d-inline-block"><i class="fa-solid fa-star text-block-opacity"></i></li>
+                                    <li class="d-inline-block"><i class="fa-solid fa-star text-block-opacity"></i></li>
+                                    <li class="d-inline-block"><i class="fa-solid fa-star text-block-opacity"></i></li>
+                                </ul>
+                            </div>
+                            <div class="shadow p-1-6 p-sm-1-9 mx-4 my-4 border-radius-10">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div>
+                                        <img src="static/img/avatars/avatar-03.jpg" class="rounded-circle" alt="...">
+                                    </div>
+                                    <div class="ps-3">
+                                        <h4 class="h5 mb-0 text-primary">Ariam Kifle</h4>
+                                        <p class="mb-0">Customer</p>
+                                    </div>
+                                </div>
+                                <p class="mb-4 border-bottom pb-4">Charging station impressed me on multiple levels.
+                                    Charging station is the next killer app.</p>
+                                <ul class="list-unstyled mb-0">
+                                    <li class="d-inline-block"><i class="fa-solid fa-star text-block-opacity"></i></li>
+                                    <li class="d-inline-block"><i class="fa-solid fa-star text-block-opacity"></i></li>
+                                    <li class="d-inline-block"><i class="fa-solid fa-star text-block-opacity"></i></li>
+                                    <li class="d-inline-block"><i class="fa-solid fa-star text-block-opacity"></i></li>
+                                    <li class="d-inline-block"><i class="fa-solid fa-star text-block-opacity"></i></li>
+                                </ul>
+                            </div>
+                            <div class="shadow p-1-6 p-sm-1-9 mx-4 my-4 border-radius-10">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div>
+                                        <img src="static/img/avatars/avatar-04.jpg" class="rounded-circle" alt="...">
+                                    </div>
+                                    <div class="ps-3">
+                                        <h4 class="h5 mb-0 text-primary">Gebre Demsas</h4>
+                                        <p class="mb-0">Customer</p>
+                                    </div>
+                                </div>
+                                <p class="mb-4 border-bottom pb-4">I just can't get enough of charging station. I am
+                                    really satisfied with my charging station.</p>
+                                <ul class="list-unstyled mb-0">
+                                    <li class="d-inline-block"><i class="fa-solid fa-star text-block-opacity"></i></li>
+                                    <li class="d-inline-block"><i class="fa-solid fa-star text-block-opacity"></i></li>
+                                    <li class="d-inline-block"><i class="fa-solid fa-star text-block-opacity"></i></li>
+                                    <li class="d-inline-block"><i class="fa-solid fa-star text-block-opacity"></i></li>
+                                    <li class="d-inline-block"><i class="fa-solid fa-star text-block-opacity"></i></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEAM
+        ================================================== -->
+        <section class="py-0">
+            <div class="container">
+                <div class="section-title text-center mb-1-6 mb-md-5">
+                    <span>Team</span>
+                    <h2>Our Crative Team</h2>
+                </div>
+                <div class="row g-xxl-5 justify-content-center mt-n1-9">
+                    <div class="col-md-6 col-lg-4 col-xl mt-1-9 mt-xl-20">
+                        <div class="card card-style03 border-0">
+                            <img src="static/img/team/team-01.jpg" alt="..." class="border-radius-10">
+                            <div class="card-body">
+                                <h3 class="display-28 mb-1"><a href="team-details.html" class="text-primary">Barry
+                                        Guay</a></h3>
+                                <span class="display-30">Managing Director</span>
+                                <ul class="icon list-unstyled mb-0">
+                                    <li>
+                                        <a href="#!"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#!"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#!"><i class="fab fa-linkedin-in"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl mt-1-9 mt-xl-10">
+                        <div class="card card-style03 border-0">
+                            <img src="static/img/team/team-02.jpg" alt="..." class="border-radius-10">
+                            <div class="card-body">
+                                <h3 class="display-28 mb-1"><a href="team-details.html" class="text-primary">Julie
+                                        Pelland</a></h3>
+                                <span class="display-30">Head of Marketing</span>
+                                <ul class="icon list-unstyled mb-0">
+                                    <li>
+                                        <a href="#!"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#!"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#!"><i class="fab fa-linkedin-in"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl mt-1-9">
+                        <div class="card card-style03 border-0">
+                            <img src="static/img/team/team-03.jpg" alt="..." class="border-radius-10">
+                            <div class="card-body">
+                                <h3 class="display-28 mb-1"><a href="team-details.html" class="text-primary">Jean
+                                        Harquin</a></h3>
+                                <span class="display-30">Sr. Manager</span>
+                                <ul class="icon list-unstyled mb-0">
+                                    <li>
+                                        <a href="#!"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#!"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#!"><i class="fab fa-linkedin-in"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl mt-1-9 mt-xl-10">
+                        <div class="card card-style03 border-0">
+                            <img src="static/img/team/team-04.jpg" alt="..." class="border-radius-10">
+                            <div class="card-body">
+                                <h3 class="display-28 mb-1"><a href="team-details.html" class="text-primary">Elita
+                                        Lacasse</a></h3>
+                                <span class="display-30">Co-Founder</span>
+                                <ul class="icon list-unstyled mb-0">
+                                    <li>
+                                        <a href="#!"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#!"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#!"><i class="fab fa-linkedin-in"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl mt-1-9 mt-xl-20">
+                        <div class="card card-style03 border-0">
+                            <img src="static/img/team/team-05.jpg" alt="..." class="border-radius-10">
+                            <div class="card-body">
+                                <h3 class="display-28 mb-1"><a href="team-details.html" class="text-primary">Kerman
+                                        Caron</a></h3>
+                                <span class="display-30">Jr. Manager</span>
+                                <ul class="icon list-unstyled mb-0">
+                                    <li>
+                                        <a href="#!"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#!"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#!"><i class="fab fa-linkedin-in"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center team-btn">
+                    <a href="team.html" class="btn-style1">View All</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO
+        ================================================== -->
+        <section>
+            <div class="container">
+                <div class="row align-items-center mb-5 mt-n1-9">
+                    <div class="col-lg-6 mt-1-9">
+                        <div class="section-title text-center text-lg-start">
+                            <span>Gallery</span>
+                            <h2>Our Best Projects</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-1-9">
+                        <div class="text-center text-lg-end">
+                            <p class="mb-0">Every single electric vehicle, also referred to as battery electric vehicles
+                                (BEVs), have an electric engine rather than a gas powered motor. Electric vehicles
+                                function by connecting to a charge point and taking power from the grid.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid p-0">
+                <div class="portfolio-carousel owl-carousel owl-theme">
+                    <div class="portfolio-style01">
+                        <div class="portfolio-img position-relative">
+                            <img src="static/img/portfolio/01.jpg" alt="..." class="border-radius-10">
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <span class="small text-primary">Solar Energy</span>
+                                    <h3 class="h5 mb-0"><a href="portfolio-details.html">Mobile Charging Solution</a>
+                                    </h3>
+                                </div>
+                                <div class="butn-icon">
+                                    <a href="portfolio-details.html"><i class="ti-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-style01">
+                        <div class="portfolio-img position-relative">
+                            <img src="static/img/portfolio/02.jpg" alt="..." class="border-radius-10">
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <span class="small text-primary">Solar Energy</span>
+                                    <h3 class="h5 mb-0"><a href="portfolio-details.html">Transport and Energy</a></h3>
+                                </div>
+                                <div class="butn-icon">
+                                    <a href="portfolio-details.html"><i class="ti-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-style01">
+                        <div class="portfolio-img position-relative">
+                            <img src="static/img/portfolio/03.jpg" alt="..." class="border-radius-10">
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <span class="small text-primary">Charging</span>
+                                    <h3 class="h5 mb-0"><a href="portfolio-details.html">EV Charging Points</a></h3>
+                                </div>
+                                <div class="butn-icon">
+                                    <a href="portfolio-details.html"><i class="ti-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-style01">
+                        <div class="portfolio-img position-relative">
+                            <img src="static/img/portfolio/04.jpg" alt="..." class="border-radius-10">
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <span class="small text-primary">Support</span>
+                                    <h3 class="h5 mb-0"><a href="portfolio-details.html">Hybrid Car Charging</a></h3>
+                                </div>
+                                <div class="butn-icon">
+                                    <a href="portfolio-details.html"><i class="ti-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-style01">
+                        <div class="portfolio-img position-relative">
+                            <img src="static/img/portfolio/05.jpg" alt="..." class="border-radius-10">
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <span class="small text-primary">Energy</span>
+                                    <h3 class="h5 mb-0"><a href="portfolio-details.html">Home Charging</a></h3>
+                                </div>
+                                <div class="butn-icon">
+                                    <a href="portfolio-details.html"><i class="ti-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-style01">
+                        <div class="portfolio-img position-relative">
+                            <img src="static/img/portfolio/06.jpg" alt="..." class="border-radius-10">
+                        </div>
+                        <div class="portfolio-content">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <span class="small text-primary">Support</span>
+                                    <h3 class="h5 mb-0"><a href="portfolio-details.html">EV Experience</a></h3>
+                                </div>
+                                <div class="butn-icon">
+                                    <a href="portfolio-details.html"><i class="ti-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION
+        ================================================== -->
+        <section class="bg-img cover-background pb-0" data-overlay-dark="7"
+            data-background="static/img/content/video-bg-img.jpg">
+            <div class="container">
+                <div class="pb-15 pb-lg-20">
+                    <div class="row align-items-center mt-n2-9">
+                        <div class="col-lg-6 mt-2-9">
+                            <div class="text-center text-lg-end">
+                                <p
+                                    class="mb-0 display-22 display-md-18 display-xl-15 display-xxl-12 w-xl-85 ms-auto text-white font-weight-800 lh-base">
+                                    We make effective solutions for modern Electric Car</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mt-2-9">
+                            <div class="ps-lg-5 text-center text-lg-start">
+                                <div class="story-video">
+                                    <a class="video video_btn" href="https://www.youtube.com/watch?v=CaoqWcHsE_g">
+                                        <i class="fa fa-play"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="clients py-2-9 py-md-7 bg-transparent">
+            <div class="container">
+                <div class="row position-relative z-index-9">
+                    <div class="col-sm-4 col-lg">
+                        <div class="text-center">
+                            <img src="static/img/clients/01.png" alt="...">
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-lg">
+                        <div class="text-center">
+                            <img src="static/img/clients/02.png" alt="...">
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-lg">
+                        <div class="text-center">
+                            <img src="static/img/clients/03.png" alt="...">
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-lg">
+                        <div class="text-center">
+                            <img src="static/img/clients/04.png" alt="...">
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-lg">
+                        <div class="text-center">
+                            <img src="static/img/clients/05.png" alt="...">
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-lg">
+                        <div class="text-center">
+                            <img src="static/img/clients/01.png" alt="...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BLOG
+        ================================================== -->
+        <section>
+            <div class="container">
+                <div class="section-title text-center mb-1-6 mb-md-5">
+                    <span>Blog</span>
+                    <h2>Our News &amp; Articals</h2>
+                </div>
+                <div class="row mt-n1-9 g-lg-5">
+                    <div class="col-md-6 col-xl-4 mt-1-9">
+                        <article class="card card-style05 border-0 bg-transparent h-100">
+                            <div class="blog-img position-relative">
+                                <img src="static/img/blog/blog-01.jpg" alt="..." class="border-radius-10">
+                            </div>
+                            <div class="card-body p-1-6 bg-white shadow position-relative mt-n1-9 ms-4">
+                                <ul class="list-unstyled">
+                                    <li class="d-inline-block display-30 me-4"><i
+                                            class="ti-calendar text-primary pe-2"></i>9 May, 2023</li>
+                                    <li class="d-inline-block display-30"><i class="ti-user text-primary pe-2"></i>By
+                                        Laure</li>
+                                </ul>
+                                <h3 class="h5 letter-spacing-1 lh-base mb-0"><a href="blog-details.html">How to plan a
+                                        road trip in your electric vehicle.</a></h3>
+                                <div class="plus-icon">
+                                    <a href="#!"><i class="ti-plus font-weight-900 text-primary"></i></a>
+                                </div>
+                                <div class="btn-text">
+                                    <a href="blog-details.html">Read More</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-xl-4 mt-1-9">
+                        <article class="card card-style05 border-0 bg-transparent h-100">
+                            <div class="blog-img position-relative">
+                                <img src="static/img/blog/blog-02.jpg" alt="..." class="border-radius-10">
+                            </div>
+                            <div class="card-body p-1-6 bg-white shadow position-relative mt-n1-9 ms-4">
+                                <ul class="list-unstyled">
+                                    <li class="d-inline-block display-30 me-4"><i
+                                            class="ti-calendar text-primary pe-2"></i>8 May, 2023</li>
+                                    <li class="d-inline-block display-30"><i class="ti-user text-primary pe-2"></i>By
+                                        Corette</li>
+                                </ul>
+                                <h3 class="h5 letter-spacing-1 lh-base mb-0"><a href="blog-details.html">Charging
+                                        solution for electric car &amp; hybrid car.</a></h3>
+                                <div class="plus-icon">
+                                    <a href="#!"><i class="ti-plus font-weight-900 text-primary"></i></a>
+                                </div>
+                                <div class="btn-text">
+                                    <a href="blog-details.html">Read More</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-6 col-xl-4 mt-1-9">
+                        <article class="card card-style05 border-0 bg-transparent h-100">
+                            <div class="blog-img position-relative">
+                                <img src="static/img/blog/blog-03.jpg" alt="..." class="border-radius-10">
+                            </div>
+                            <div class="card-body p-1-6 bg-white shadow position-relative mt-n1-9 ms-4">
+                                <ul class="list-unstyled">
+                                    <li class="d-inline-block display-30 me-4"><i
+                                            class="ti-calendar text-primary pe-2"></i>5 May, 2023</li>
+                                    <li class="d-inline-block display-30"><i class="ti-user text-primary pe-2"></i>By
+                                        Robert</li>
+                                </ul>
+                                <h3 class="h5 letter-spacing-1 lh-base mb-0"><a href="blog-details.html">Home charging
+                                        station for an electric vehicles.</a></h3>
+                                <div class="plus-icon">
+                                    <a href="#!"><i class="ti-plus font-weight-900 text-primary"></i></a>
+                                </div>
+                                <div class="btn-text">
+                                    <a href="blog-details.html">Read More</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER
+        ================================================== -->
+        <footer class="position-relative">
+            <div class="container">
+                <div class="row mt-n1-9">
+                    <div class="col-sm-6 col-lg-4 mt-1-9">
+                        <div class="pe-sm-5">
+                            <div class="section-title footer mb-1-6 mb-md-1-9">
+                                <span>About Company</span>
+                            </div>
+                            <p class="mb-1-9 display-27 text-white opacity9 lh-base">Electric vehicles function by
+                                connecting to a charge point and taking power from the grid.</p>
+                            <ul class="social-icon-style1">
+                                <li>
+                                    <a href="#!"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#!"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#!"><i class="fab fa-youtube"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#!"><i class="fab fa-linkedin-in"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-2 mt-1-9">
+                        <div class="ps-sm-5 ps-lg-0">
+                            <div class="section-title footer mb-1-6 mb-md-1-9">
+                                <span>Quick Links</span>
+                            </div>
+                            <ul class="list-unstyled mb-0 list-style1">
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="our-history.html">History</a></li>
+                                <li><a href="pricing.html">Pricing</a></li>
+                                <li><a href="team.html">Team</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 mt-1-9">
+                        <div class="ps-lg-4 ps-xl-0 pe-sm-1-6 pe-xl-5">
+                            <div class="section-title footer mb-1-6 mb-md-1-9">
+                                <span>Contacts</span>
+                            </div>
+                            <ul class="footer-link mb-0 list-unstyled">
+                                <li class="text-white mb-4">
+                                    <strong>Adress:</strong> <span class="opacity8">66 Guild Street 512B,
+                                        karnatak.</span>
+                                </li>
+                                <li class="text-white mb-4">
+                                    <strong>Email:</strong> <span class="opacity8"> RVCE@gmail.com</span>
+                                </li>
+                                <li class="text-white">
+                                    <strong>Phone:</strong> <span class="opacity8"> 9448808130</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3 mt-1-9">
+                        <div class="ps-sm-5 ps-lg-0">
+                            <div class="section-title footer mb-1-6 mb-md-1-9">
+                                <span>Newsletter</span>
+                            </div>
+                            <p class="display-28 text-white">Subscribe For The Our Latest Updates !</p>
+                            <form class="quform newsletter-form" action="static/quform/newsletter-two.php" method="post"
+                                enctype="multipart/form-data" onclick="">
+
+                                <div class="quform-elements">
+                                    <div class="row">
+
+                                        <!-- Begin Text input element -->
+                                        <div class="col-md-12">
+                                            <div class="quform-element mb-0">
+                                                <div class="quform-input mb-3">
+                                                    <input class="form-control w-70 w-sm-100" id="email_address"
+                                                        type="text" name="email_address"
+                                                        placeholder="Subscribe with us">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- End Text input element -->
+
+                                        <!-- Begin Submit button -->
+                                        <div class="col-md-12">
+                                            <div class="quform-submit-inner">
+                                                <button class="btn-style1 primary border-0 w-70 w-sm-100"
+                                                    type="submit">Subscribe</button>
+                                            </div>
+                                            <div class="quform-loading-wrap"><span class="quform-loading"></span></div>
+                                        </div>
+                                        <!-- End Submit button -->
+                                    </div>
+
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="py-4 border-top border-color-light-white mt-8">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-12 text-center">
+                            <p class="d-inline-block text-white mb-0">© <span class="current-year"></span> Chargey
+                                Powered by <a href="/contact" class="text-primary text-white-hover">Us</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- start scroll to top -->
+    <a href="#!" class="scroll-to-top"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
+    <!-- end scroll to top -->
+
+    <!-- all js include start -->
+
+    <!-- jQuery -->
+    <script src="static/js/jquery.min.js"></script>
+
+    <!-- popper js -->
+    <script src="static/js/popper.min.js"></script>
+
+    <!-- bootstrap -->
+    <script src="static/js/bootstrap.min.js"></script>
+
+    <!-- core.min.js -->
+    <script src="static/js/core.min.js"></script>
+
+    <!-- search -->
+    <script src="static/search/search.js"></script>
+
+    <!-- custom scripts -->
+    <script src="static/js/main.js"></script>
+
+    <!-- form plugins js -->
+    <script src="static/quform/js/plugins.js"></script>
+
+    <!-- form scripts js -->
+    <script src="static/quform/js/scripts.js"></script>
+
+    <!-- all js include end -->
+
+
+
+</body>
+
+</html>

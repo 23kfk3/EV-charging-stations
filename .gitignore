@@ -1,0 +1,4 @@
+shell
+static
+**/__pycache__
+**/migrations
